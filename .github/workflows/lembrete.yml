@@ -2,6 +2,18 @@ name: Enviar Lembrete Discord
 
 on:
   schedule:
+  name: Enviar Lembrete Discord
+
+on:
+  schedule:
+    # 18:00 UTC = 15:00 de Brasília. 
+    # 1-5 = Segunda a Sexta-feira.
+    - cron: '0 18 * * 1-5'
+  workflow_dispatch: # <-- ADICIONE ESTA LINHA EXATAMENTE AQUI
+
+jobs:
+...
+
     # IMPORTANTE: O horário aqui usa o padrão CRON e o fuso horário UTC (3 horas a mais que o de Brasília).
     # O exemplo abaixo roda TODOS OS DIAS às 12:00 do horário de Brasília (15:00 UTC).
     - cron: '0 15 * * *'
